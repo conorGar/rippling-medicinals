@@ -1,0 +1,15 @@
+
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: rgb(192, 192, 192);
+    margin: 0 15px;
+    margin-bottom: 15px;
+}
