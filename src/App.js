@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import Header from './Components/Header'
 import AboutUs from './Pages/AboutUs/AboutUs'
 import Contact from './Pages/Contact/Contact'
-
+import Footer from './Components/Footer'
 function App() {
   return (
     <div className="App">
@@ -33,6 +33,7 @@ function App() {
         path="/product"
         component={Home}
       />
+      <Footer />
 
     </div>
   );

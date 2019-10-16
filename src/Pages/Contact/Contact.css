@@ -1,0 +1,78 @@
+
+
+.contact-holder{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+
+}
+
+.contact-banner{
+    background-image: url('./../../assets/contactBannerImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+    
+}
+
+.copy-text{
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px #2f2f2f;
+}
+
+.contact-form{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.form-title{
+    border-style: solid;
+    border-width: 0;
+    border-top-width: 1px;
+    border-color: rgb(204, 204, 204);
+    margin: 10px 20px;
+    font-size: 40px;
+
+}
+
+.form-subtitle{
+    color: grey;
+    margin: 5px;
+}
+
+
+.input-email{
+    width: 80%;
+    /* height: 30px; */
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.input-message{
+    width: 90%;
+    height: 200px;
+    resize: none;
+}
+
+.submit-button{
+    width: 10%;
+    height: 40px;
+    background-color: rgb(162, 162, 162);
+    margin-top:10px;
+    margin-right: 10%;
+    padding-left: 0%;
+    align-self: flex-start;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+}

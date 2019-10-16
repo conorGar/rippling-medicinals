@@ -4,7 +4,6 @@ import HomepageBanner from './../../Components/HomepageBanner'
 import CategoriesRow from './../../Components/CategoriesRow'
 import WhyUs from './../../Components/WhyUs'
 import Featured from './../../Components/Featured'
-import Footer from './../../Components/Footer'
 
 function Home(){
     return(
@@ -13,7 +12,6 @@ function Home(){
             <CategoriesRow />
             <Featured />
             <WhyUs />
-            <Footer />
         </div>
     )
 }
