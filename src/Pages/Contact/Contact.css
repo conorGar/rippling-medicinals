@@ -67,10 +67,10 @@
 .submit-button{
     width: 10%;
     height: 40px;
-    background-color: rgb(162, 162, 162);
+    background-color: rgb(195, 194, 194);
     margin-top:10px;
     margin-right: 10%;
-    padding-left: 0%;
+    /* padding-left: 0%; */
     align-self: flex-start;
     color: white;
     font-weight: 700;

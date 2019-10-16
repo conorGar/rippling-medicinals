@@ -6,6 +6,8 @@ import Header from './Components/Header'
 import AboutUs from './Pages/AboutUs/AboutUs'
 import Contact from './Pages/Contact/Contact'
 import Footer from './Components/Footer'
+import ProductPage from './Pages/ProductPage/ProductPage'
+
 function App() {
   return (
     <div className="App">
@@ -30,8 +32,8 @@ function App() {
 
       <Route
         exact
-        path="/product"
-        component={Home}
+        path="/product/1"
+        component={ProductPage}
       />
       <Footer />
 
