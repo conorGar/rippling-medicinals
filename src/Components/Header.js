@@ -10,7 +10,7 @@ function Header(){
             </Link>
             <div className='other-links-holder'>
 
-                <Link to='/product' className='other-link'>
+                <Link to='/shop' className='other-link'>
                     <h5 className='navLink'>Shop</h5>
                 </Link>
                 <Link to='/about' className='other-link'>
