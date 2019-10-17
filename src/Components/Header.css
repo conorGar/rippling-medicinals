@@ -3,7 +3,7 @@
 .header-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
     background-color: white;
     border-style: solid;
@@ -12,4 +12,27 @@
     border-color: rgb(192, 192, 192);
     margin: 0 15px;
     margin-bottom: 15px;
+    font-family: 'Dosis', sans-serif;
+}
+
+
+.home-logo{
+    background-image: url('./../assets/logo_large.png');
+    background-size: cover;
+    background-color: blue;
+    width: 100px;
+    height: 80px;
+    align-self: flex-start;
+}
+
+.other-links-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.other-link{
+    margin: 0 50px;
+    text-decoration: none;
+    color: black;
 }

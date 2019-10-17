@@ -11,6 +11,7 @@ import ProductPage from './Pages/ProductPage/ProductPage'
 function App() {
   return (
     <div className="App">
+      <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
       <Header />
       <Route
         exact

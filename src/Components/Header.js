@@ -6,18 +6,20 @@ function Header(){
     return(
         <div className='header-container'>
             <Link to='/'>
-                <h5 className='navLink'>Home</h5>
+                <div className='home-logo'></div>
             </Link>
+            <div className='other-links-holder'>
 
-            <Link to='/product'>
-                <h5 className='navLink'>Shop</h5>
-            </Link>
-            <Link to='/about'>
-                <h5 className='navLink'>About</h5>
-            </Link>
-            <Link to='/contact'>
-                <h5 className='navLink'>Contact</h5>
-            </Link>
+                <Link to='/product' className='other-link'>
+                    <h5 className='navLink'>Shop</h5>
+                </Link>
+                <Link to='/about' className='other-link'>
+                    <h5 className='navLink' >About</h5>
+                </Link>
+                <Link to='/contact' className='other-link'>
+                    <h5 className='navLink' >Contact</h5>
+                </Link>
+            </div>
 
         </div>
     )
