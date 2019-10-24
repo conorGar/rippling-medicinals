@@ -19,6 +19,9 @@ function Header(){
                 <Link to='/contact' className='other-link'>
                     <h5 className='navLink' >Contact</h5>
                 </Link>
+                <Link to='/blogs' className='other-link'>
+                    <h5 className='navLink' >Blog</h5>
+                </Link>
             </div>
 
         </div>

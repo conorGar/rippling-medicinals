@@ -8,6 +8,8 @@ import Contact from './Pages/Contact/Contact'
 import Footer from './Components/Footer'
 import ProductPage from './Pages/ProductPage/ProductPage'
 import ShopPage from './Pages/Shop/ShopPage'
+import Blogs from './Pages/Blog/Blogs'
+import BlogPost from './Pages/Blog/BlogPost'
 
 function App() {
   return (
@@ -40,9 +42,23 @@ function App() {
 
       <Route
         exact
+        path="/blogs"
+        component={Blogs}
+      />
+
+
+      <Route
+        exact
         path="/product/1"
         component={ProductPage}
       />
+
+      <Route
+        exact
+        path="/blog/:id"
+        component={BlogPost}
+      />
+
       <Footer />
 
     </div>
