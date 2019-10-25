@@ -10,6 +10,7 @@ import ProductPage from './Pages/ProductPage/ProductPage'
 import ShopPage from './Pages/Shop/ShopPage'
 import Blogs from './Pages/Blog/Blogs'
 import BlogPost from './Pages/Blog/BlogPost'
+import WriteBlog from './Pages/WriteBlog/WriteBlog'
 
 function App() {
   return (
@@ -57,6 +58,12 @@ function App() {
         exact
         path="/blog/:id"
         component={BlogPost}
+      />
+
+      <Route 
+      exact
+      path="/blogs/post"
+      component={WriteBlog}
       />
 
       <Footer />
