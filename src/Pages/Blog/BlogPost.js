@@ -2,6 +2,7 @@ import React from 'react';
 import './BlogPost.css';
 import { apiCall } from '../../services/apiService'
 import { Link } from 'react-router-dom'
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 class BlogPost extends React.Component{
     constructor(props){
@@ -34,7 +35,7 @@ class BlogPost extends React.Component{
         return(
             <div className='blogpost-holder'>
                 <h1>{this.state.title}</h1>
-                <p>{this.state.description}</p>
+                {ReactHtmlParser(this.state.description)}
             </div>
         )
     }

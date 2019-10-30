@@ -7,8 +7,8 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 import FroalaEditorComponent from 'react-froala-wysiwyg';
 
-class WriteBlog extends React.Component{
-    constructor(props){
+class WriteBlog extends React.Component {
+    constructor(props) {
         super(props)
 
         this.state = {
@@ -17,13 +17,17 @@ class WriteBlog extends React.Component{
         }
     }
 
-   handleModelChange = (model) => {
+    handleModelChange = (model) => {
         this.setState({
-          model: model
+            model: model
         });
-      }
+    }
 
-      handleBlogSubmit = async (e) => {
+    handleTitleChange = () => {
+        
+    }
+
+    handleBlogSubmit = async (e) => {
         e.preventDefault();
         const { title, model } = this.state
         const id = this.props.match.params.id;
@@ -37,12 +41,19 @@ class WriteBlog extends React.Component{
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className='writeblog-holder'>
+                <input
+                    type='text'
+                    name='name'
+                    onChange={this.handleTitleChange}
+                    className="title-input-form"
+                    value={this.state.name}
+                />
                 <FroalaEditorComponent tag='textarea'
-                model={this.state.model}
-                onModelChange={this.handleModelChange}
+                    model={this.state.model}
+                    onModelChange={this.handleModelChange}
                 />
                 <button onClick={this.handleBlogSubmit}>Submit</button>
             </div>

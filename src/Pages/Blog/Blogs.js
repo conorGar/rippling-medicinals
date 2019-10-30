@@ -2,6 +2,7 @@ import React from 'react';
 import './Blogs.css';
 import { apiCall } from '../../services/apiService'
 import { Link } from 'react-router-dom'
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 class Blogs extends React.Component{
     constructor(props){
@@ -31,9 +32,12 @@ class Blogs extends React.Component{
         return blogPosts.map(blog => {
             return(
                 <div key={blog.id} className='blog-container'>
-                    <Link to={`/blog/${blog.id}`}>
-                        <h1>{blog.title}</h1>
-                        <h5>{blog.description}</h5>
+                    <Link to={`/blog/${blog.id}`} className='blog-link'>
+                        <h1 className='blog-container-title'>{blog.title}</h1>
+                        <div className='lower-blog-container'>
+                            <img src="https://www.verywellhealth.com/thmb/g6ZvER87sfrNdrmdc00JIgAQOqw=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-155098400-5b6102b84cedfd005062a2c5.jpg" className='blog-image'/>
+                            <div className='blog-container-description'>{ReactHtmlParser(blog.description)}</div>
+                        </div>
                     </Link>
 
                 </div>

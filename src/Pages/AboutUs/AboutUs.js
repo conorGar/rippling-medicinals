@@ -3,9 +3,11 @@ import './AboutUs.css'
 
 function AboutUs(){
     return(
-        <div>
-            <h1>About Us</h1>
-            <h5>Rippling Medicinals lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</h5>
+        <div className='about-holder'>
+            <div className='about-banner'>
+                <h1 className='copy-text'>About Us</h1>
+            </div>
+            <h5 className='about-description'>Rippling Medicinals lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</h5>
         </div>
 
     )
