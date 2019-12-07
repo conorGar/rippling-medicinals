@@ -30,6 +30,9 @@ class Blogs extends React.Component{
         const {blogPosts} = this.state;
 
         return blogPosts.map(blog => {
+            if(blog.description.length >= 120){
+                blog.description = blog.description.substring(0,120) + '...';
+            }
             return(
                 <div key={blog.id} className='blog-container'>
                     <Link to={`/blog/${blog.id}`} className='blog-link'>
@@ -48,6 +51,7 @@ class Blogs extends React.Component{
 
 
     render(){
+        
         return(
             <div className='blogs-holder'>
                 {this.renderBlogPosts()}

@@ -11,6 +11,7 @@ import ShopPage from './Pages/Shop/ShopPage'
 import Blogs from './Pages/Blog/Blogs'
 import BlogPost from './Pages/Blog/BlogPost'
 import WriteBlog from './Pages/WriteBlog/WriteBlog'
+import ProductCreate from './Pages/ProductCreate/ProductCreate'
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
 
       <Route
         exact
-        path="/product/1"
+        path="/product/:id"
         component={ProductPage}
       />
 
@@ -65,6 +66,13 @@ function App() {
       path="/blogs/post"
       component={WriteBlog}
       />
+
+      <Route 
+      exact
+      path="/create/product"
+      component={ProductCreate}
+      />
+
 
       <Footer />
 

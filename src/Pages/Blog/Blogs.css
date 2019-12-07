@@ -35,6 +35,12 @@
 .blog-container-description{
     margin-left: 10px;
     color: grey;
+    display: flex;
+}
+
+p{
+    word-wrap: break-word;
+
 }
 
 .blog-image{
