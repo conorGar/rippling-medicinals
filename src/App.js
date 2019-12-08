@@ -12,72 +12,124 @@ import Blogs from './Pages/Blog/Blogs'
 import BlogPost from './Pages/Blog/BlogPost'
 import WriteBlog from './Pages/WriteBlog/WriteBlog'
 import ProductCreate from './Pages/ProductCreate/ProductCreate'
+import LoginForm from './Pages/AdminSignin/AdminSignin'
+import { login, signUp, getProfile } from './services/apiService'
+import authService from './services/authService'
 
-function App() {
-  return (
-    <div className="App">
-      <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
-      <Header />
-      <Route
+
+
+export default class App extends React.Component  {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: {},
+      isSignedIn: false,
+      showLoginForm: 'loginform-hide',
+    }
+  }
+  componentDidMount = async () => {
+    try {
+      const fetchUser = await getProfile()
+      this.setState(() => {
+        return {
+          isSignedIn: authService.isAuthenticated(),
+          user: fetchUser
+        }
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+
+
+  loginUser = async credentials => {
+    try {
+      const user = await login(credentials)
+      this.setState(state => {
+        return {
+          isSignedIn: true,
+          user: user
+        }
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
+        <Header />
+        <Route
+          exact
+          path="/"
+          component={Home}
+        />
+
+        <Route
+          exact
+          path="/about"
+          component={AboutUs}
+        />
+
+        <Route
+          exact
+          path="/contact"
+          component={Contact}
+        />
+
+        <Route
+          exact
+          path="/shop"
+          component={ShopPage}
+        />
+
+        <Route
+          exact
+          path="/blogs"
+          component={Blogs}
+        />
+
+
+        <Route
+          exact
+          path="/product/:id"
+          component={ProductPage}
+        />
+
+        <Route
+          exact
+          path="/blog/:id"
+          component={BlogPost}
+        />
+
+        <Route 
         exact
-        path="/"
-        component={Home}
-      />
+        path="/blogs/post"
+        component={WriteBlog}
+        />
 
-      <Route
+        <Route 
         exact
-        path="/about"
-        component={AboutUs}
-      />
+        path="/create/product"
+        component={ProductCreate}
+        />
 
-      <Route
-        exact
-        path="/contact"
-        component={Contact}
-      />
-
-      <Route
-        exact
-        path="/shop"
-        component={ShopPage}
-      />
-
-      <Route
-        exact
-        path="/blogs"
-        component={Blogs}
-      />
+        <Route
+            exact
+            path="/admin/signin"
+            render={props => (
+              <LoginForm {...props} handleLogin={this.loginUser} />
+            )}
+        />
 
 
-      <Route
-        exact
-        path="/product/:id"
-        component={ProductPage}
-      />
+        <Footer />
 
-      <Route
-        exact
-        path="/blog/:id"
-        component={BlogPost}
-      />
-
-      <Route 
-      exact
-      path="/blogs/post"
-      component={WriteBlog}
-      />
-
-      <Route 
-      exact
-      path="/create/product"
-      component={ProductCreate}
-      />
-
-
-      <Footer />
-
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
-export default App;
