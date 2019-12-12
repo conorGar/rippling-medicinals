@@ -31,15 +31,29 @@
     width:250px;height:250px;
     border-radius:200px;
     position: relative;
-    background-image: url('./../assets/logo_large.png');
+    background-image: url('./../assets/logo_large3.jpg');
     background-size: cover;
     /* position: absolute; */
+}
+
+.banner-title-logo{
+  background-image: url('./../assets/titleText.png');
+  background-size: contain;
+  /* background-color: blue; */
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding: 70px 0px;
+
 }
 
 .banner-image{
     position: absolute;
     width: 100%;
     height: 100%;
+    -webkit-animation: fade-in-bottom 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both .7s;
+    animation: fade-in-bottom 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both .7s;
+    font-family: 'Dosis', sans-serif;
 }
 
 .shopnow-holder{

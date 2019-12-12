@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Home from './Pages/Home/Home'
 import { Route } from "react-router-dom";
+import ProtectedRoute from './Components/ProtectedRoute'
+
 import Header from './Components/Header'
 import AboutUs from './Pages/AboutUs/AboutUs'
 import Contact from './Pages/Contact/Contact'
@@ -58,6 +60,8 @@ export default class App extends React.Component  {
   }
 
   render(){
+    const { isSignedIn, user } = this.state
+
     return (
       <div className="App">
         <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
@@ -110,12 +114,20 @@ export default class App extends React.Component  {
         path="/blogs/post"
         component={WriteBlog}
         />
+          <div>
+            <ProtectedRoute
+              path="/create/product"
+              user={user}
+              component={ProductCreate}
+            />
+            ​{' '}
+          </div>
 
-        <Route 
+        {/* <Route 
         exact
         path="/create/product"
         component={ProductCreate}
-        />
+        /> */}
 
         <Route
             exact
