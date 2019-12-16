@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const BASE_URL = `http://localhost:8001/`   
+const BASE_URL =   process.env.REACT_APP_HEROKU_URL//'https://intense-cliffs-51301.herokuapp.com/' // process.env.REACT_APP_HEROKU_URL  //|| `http://localhost:8001/` 
 const JWT_TOKEN = localStorage.getItem('token')
 
 console.log("GOT HERE")
-console.log(BASE_URL)
+// console.log(BASE_URL)
 
 //        'Access-Control-Allow-Origin': BASE_URL
 

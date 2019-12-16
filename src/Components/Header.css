@@ -12,14 +12,16 @@
     border-color: rgb(192, 192, 192);
     margin: 0 0px;
     margin-bottom: 15px;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Gupter';
+    font-size: 20px;
+
 }
 
 
 .home-logo{
     background-image: url('./../assets/ripplingHomeIcon.jpg');
     background-size: cover;
-    background-color: blue;
+    /* background-color: blue; */
     width: 200px;
     height: 80px;
     align-self: flex-start;
@@ -30,10 +32,89 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .other-link{
     margin: 0 50px;
     text-decoration: none;
-    color: black;
+    padding: 0px 10px;
+    color: rgb(160, 160, 160);
+    transition-duration: .4s;
+    border-radius:200px;
+
 }
+
+.other-link:hover{
+    color: black;
+    /* animation: ripple2 1s linear; */
+    border-radius:200px;
+
+
+}
+
+@keyframes ripple2 {
+    0% {
+      box-shadow: 0 0 0 0rem rgba(109, 197, 255, 0),
+                  0 0 0 .2rem rgba(109, 197, 255,0),
+                  0 0 0 .5rem rgba(109, 197, 255,0),
+                  0 0 0 1rem rgba(109, 197, 255,0);
+    }
+    20%{
+        box-shadow: 0 0 0 .2rem rgba(109, 197, 255, 0.1),
+                  0 0 0 .4rem rgba(109, 197, 255,.1),
+                  0 0 0 .7rem rgba(109, 197, 255,.1),
+                  0 0 0 1.2rem rgba(109, 197, 255,.1);
+    }
+    100% {
+      box-shadow: 0 0 0 1rem rgba(109, 197, 255,0),
+                  0 0 0 1.2rem rgba(109, 197, 255,0),
+                  0 0 0 1.5rem rgba(109, 197, 255,0),
+                  0 0 0 1.8rem rgba(109, 197, 255, 0);
+    }
+  }
+
+  @media (max-width: 420px) {
+    
+
+.header-container{
+  
+    /* background-color: rebeccapurple; */
+    justify-content: space-between;
+
+}
+
+
+    .home-logo{
+        background-image: url('./../assets/ripplingHomeIcon.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        width: 40vw;
+        align-self: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .other-links-holder{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 0;
+        margin: 0;
+        /* background-color: aquamarine; */
+    }
+
+    .other-link{
+        /* background-color: green; */
+        margin: 0 0px;
+
+        /* font-size: 10px; */
+
+        padding: 0 5px;
+    }
+
+
+  }

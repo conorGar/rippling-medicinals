@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function Header(){
     return(
         <div className='header-container'>
+            <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet"></link>
             <Link to='/'>
                 <div className='home-logo'></div>
             </Link>

@@ -64,6 +64,8 @@ export default class App extends React.Component  {
 
     return (
       <div className="App">
+                    <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet"></link>
+
         <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
         <Header />
         <Route

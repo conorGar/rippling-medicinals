@@ -20,6 +20,8 @@ class ProductCreate extends React.Component {
     }
 
     handleImageUpload = async (evt) => {
+        console.log("Image Upload")
+        console.log(evt)
         await S3FileUpload.uploadFile(evt[0], AwsConfig)
         .then((data) => {
             this.setState({
@@ -32,13 +34,14 @@ class ProductCreate extends React.Component {
     }
 
     handleProductSubmit = async (e) => {
+
         e.preventDefault();
         const { title, description, imgUrl, ingredients } = this.state
         const id = this.props.match.params.id;
         console.log("Handle blog submit activate")
         try {
-            await apiCall.post(`app/product/create`, { title, description, imgUrl, ingredients })
-            await this.props.history.push('/')
+            await apiCall.post(`/product/create`, { title, description, imgUrl, ingredients })
+            //await this.props.history.push('/')
         }
         catch (error) {
             throw error
@@ -58,21 +61,27 @@ class ProductCreate extends React.Component {
             <div className='product-create-holder'>
                 <h1>Upload New Product</h1>
                 <div className="form-container">
-                    <form className="project-submit-form" onSubmit={this.handleProjectSubmit}>
-                        <div className="upload-image-container">
-                            <h2>Product Image:</h2>
-                            <input
-                                name="uploadedImage"
-                                type="file"
-                                onChange={this.handleImageUpload}
-                            />
-                        </div>
+                    <form className="project-submit-form" onSubmit={this.handleProductSubmit}>
+
+                    <Dropzone onDrop={this.handleImageUpload} >
+                            {({ getRootProps, getInputProps }) => (
+                                <section className='dropzone-section'>
+                                    <h2>Story Banner Image:</h2>
+                                    <h5 className='subtitle'> Recommended Size: ... </h5>
+                                    <div {...getRootProps()} className='banner-drop-zone'>
+                                        <input {...getInputProps()} />
+                                        <p>Drag 'n' drop file here, or click to select file</p>
+                                    </div>
+                                </section>
+                            )}
+                        </Dropzone>
+                       
                         <div className="text-info-container">
                             <div className="input-title-container">
                                 <h2>Product Title:</h2>
                                 <input
                                     type='text'
-                                    name='name'
+                                    name='title'
                                     onChange={this.handleTextInput}
                                     className="title-input-form"
                                     value={this.state.title}
@@ -93,7 +102,7 @@ class ProductCreate extends React.Component {
                                 <h3>Ingredients Used:</h3>
                                 <input
                                     type='text'
-                                    name='skills'
+                                    name='ingredients'
                                     className='ingredients-input'
                                     onChange={this.handleTextInput}
                                     value={this.state.ingredients}
