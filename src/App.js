@@ -20,7 +20,7 @@ import authService from './services/authService'
 
 
 
-export default class App extends React.Component  {
+export default class App extends React.Component {
 
   constructor(props) {
     super(props)
@@ -59,12 +59,12 @@ export default class App extends React.Component  {
     }
   }
 
-  render(){
+  render() {
     const { isSignedIn, user } = this.state
 
     return (
       <div className="App">
-                    <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css?family=Gupter&display=swap" rel="stylesheet"></link>
 
         <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
         <Header />
@@ -111,19 +111,19 @@ export default class App extends React.Component  {
           component={BlogPost}
         />
 
-        <Route 
-        exact
-        path="/blogs/post"
-        component={WriteBlog}
+        <Route
+          exact
+          path="/blogs/post"
+          component={WriteBlog}
         />
-          <div>
-            <ProtectedRoute
-              path="/create/product"
-              user={user}
-              component={ProductCreate}
-            />
-            ​{' '}
-          </div>
+        <div>
+          <ProtectedRoute
+            path="/create/product"
+            user={user}
+            component={ProductCreate}
+          />
+          {' '}
+        </div>
 
         {/* <Route 
         exact
@@ -132,15 +132,17 @@ export default class App extends React.Component  {
         /> */}
 
         <Route
-            exact
-            path="/admin/signin"
-            render={props => (
-              <LoginForm {...props} handleLogin={this.loginUser} />
-            )}
+          exact
+          path="/admin/signin"
+          render={props => (
+            <LoginForm {...props} handleLogin={this.loginUser} />
+          )}
         />
 
 
-        <Footer />
+        <Footer
+          isSignedIn={isSignedIn}
+        />
 
       </div>
     );
