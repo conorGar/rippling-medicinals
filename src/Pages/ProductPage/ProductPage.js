@@ -37,7 +37,7 @@ class ProductPage extends React.Component {
     }
     deleteProject = async () => {
         let id = this.props.match.params.id
-        await apiCall.delete(`story/${id}`)
+        await apiCall.delete(`/product/${id}`)
         await this.props.history.push('/')
 
         // await this.fetchUserInfo()
