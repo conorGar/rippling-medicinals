@@ -27,10 +27,47 @@
 }
 
 .links-holder{
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     /* background-color: blue; */
+    padding: 30px 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.other-link{
+    margin: 0 50px;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: rgb(160, 160, 160);
+    transition-duration: .4s;
+    border-radius:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
+}
+
+.navLink{
+    font-family: 'Gupter';
+    
+
+}
+
+.navLink-facebook{
+    text-decoration: none;
+    font-family: 'Gupter';
+    color: rgb(160, 160, 160);
+    padding: 10px 10px;
+
+
+}
+
+.navLink-facebook:hover{
+    color: black;
+    transition-duration: .4s;
+
 }

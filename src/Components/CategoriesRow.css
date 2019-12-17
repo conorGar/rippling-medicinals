@@ -49,3 +49,30 @@
 .categories-text{
     z-index: 2;
 }
+
+
+@media (max-width:420px){
+
+.categories-holder{
+    margin: 0px;
+}
+.categories-box{
+    background-color: rgb(87, 126, 255);
+    /* background-image: url('https://s3.amazonaws.com/leafly-s3/content/cannabis-tinctures-101-what-are-they-how-to-make-them-and-how-to/7fV4fF9pTSOhemGxRxyu_tincture-bottles.jpg'); */
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 0px 0px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    position: relative;
+
+}
+
+}
