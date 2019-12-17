@@ -32,11 +32,11 @@ export default class App extends React.Component {
   }
   componentDidMount = async () => {
     try {
-      const fetchUser = await getProfile()
+      //const fetchUser = await getProfile()
       this.setState(() => {
         return {
-          isSignedIn: authService.isAuthenticated(),
-          user: fetchUser
+          isSignedIn: authService.isAuthenticated()
+          //user: fetchUser
         }
       })
     } catch (error) {
@@ -102,7 +102,9 @@ export default class App extends React.Component {
         <Route
           exact
           path="/product/:id"
-          component={ProductPage}
+          render={props => (
+            <ProductPage {...props} isSignedIn={isSignedIn} />
+          )}
         />
 
         <Route

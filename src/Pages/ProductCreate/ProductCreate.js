@@ -41,7 +41,7 @@ class ProductCreate extends React.Component {
         console.log("Handle blog submit activate")
         try {
             await apiCall.post(`/product/create`, { title, description, imgUrl, ingredients })
-            //await this.props.history.push('/')
+            await this.props.history.push('/')
         }
         catch (error) {
             throw error

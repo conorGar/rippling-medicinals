@@ -4,6 +4,7 @@ const BASE_URL =  'https://intense-cliffs-51301.herokuapp.com/' // process.env.R
 const JWT_TOKEN = localStorage.getItem('token')
 
 console.log("GOT HERE")
+console.log(JWT_TOKEN);
 // console.log(BASE_URL)
 
 //        'Access-Control-Allow-Origin': BASE_URL
