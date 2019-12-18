@@ -3,20 +3,22 @@
 .productpage-holder{
     display: flex;
     flex-direction: row;
-    padding: 30px 150px;
+    /* padding: 30px 150px; */
+    /* background: #b23e35; */
 }
 
 .productpage-left{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
+    /* background-color: blue; */
+    width: 100%;
     padding: 0 50px;
     /* background-color: blue; */
 }
 .productpage-right{
-    /* width: 100%; */
+    width: 100%;
 
-    /* background-color: red; */
+    /* background-color: green; */
     display: flex;
     flex-direction: column;
 }
