@@ -14,6 +14,7 @@ import Blogs from './Pages/Blog/Blogs'
 import BlogPost from './Pages/Blog/BlogPost'
 import WriteBlog from './Pages/WriteBlog/WriteBlog'
 import ProductCreate from './Pages/ProductCreate/ProductCreate'
+import ProductEdit from './Pages/ProductEdit/ProductEdit'
 import LoginForm from './Pages/AdminSignin/AdminSignin'
 import { login, signUp, getProfile } from './services/apiService'
 import authService from './services/authService'
@@ -123,6 +124,14 @@ export default class App extends React.Component {
             path="/create/product"
             user={user}
             component={ProductCreate}
+          />
+          {' '}
+        </div>
+        <div>
+          <ProtectedRoute
+            path="/edit/product/:id"
+            user={user}
+            component={ProductEdit}
           />
           {' '}
         </div>

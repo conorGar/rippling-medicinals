@@ -4,10 +4,10 @@ import Dropzone from 'react-dropzone'
 import S3FileUpload from 'react-s3';
 import { AwsConfig } from '../../services/AwsConfig'
 
-import './ProductCreate.css'
+import './ProductEdit.css'
+import { async } from 'q';
 
-
-class ProductCreate extends React.Component {
+class ProductEdit extends React.Component {
     constructor(props){
         super(props)
 
@@ -18,6 +18,19 @@ class ProductCreate extends React.Component {
             imgUrl: ""
         }
     }
+
+    componentDidMount = async () => {
+        let id = this.props.match.params.id
+        const thisProd = await apiCall.get(`product/${id}`)
+        const { title, description, imgUrl, ingredients} = thisProd.data;
+        this.setState({
+            title: title,
+            description: description,
+            ingredients: ingredients,
+            imgUrl: imgUrl
+        })
+    }
+
 
     handleImageUpload = async (evt) => {
         console.log("Image Upload")
@@ -33,14 +46,16 @@ class ProductCreate extends React.Component {
         })
     }
 
-    handleProductSubmit = async (e) => {
+    handleProjectSubmit = async (e) => {
 
         e.preventDefault();
-        const { title, description, imgUrl, ingredients } = this.state
+
+        const { title, description, ingredients, imgUrl } = this.state
         const id = this.props.match.params.id;
-        console.log("Handle blog submit activate")
+        console.log("Handle project submit activate")
         try {
-            await apiCall.post(`/product/create`, { title, description, imgUrl, ingredients })
+            await apiCall.put(`product/${id}`, { title, description, imgUrl, ingredients })
+
             await this.props.history.push('/')
         }
         catch (error) {
@@ -59,9 +74,9 @@ class ProductCreate extends React.Component {
     render(){
         return(
             <div className='product-create-holder'>
-                <h1>Upload New Product</h1>
+                <h1>Edit Product</h1>
                 <div className="form-container">
-                    <form className="project-submit-form" onSubmit={this.handleProductSubmit}>
+                <form className="project-submit-form" onSubmit={this.handleProjectSubmit}>
 
                     <Dropzone onDrop={this.handleImageUpload} >
                             {({ getRootProps, getInputProps }) => (
@@ -119,7 +134,6 @@ class ProductCreate extends React.Component {
         )
     }
 
-
 }
 
-export default ProductCreate;
+export default ProductEdit;

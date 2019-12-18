@@ -35,7 +35,7 @@ class ShopPage extends React.Component{
                 <div key={product.id} className='product-container'>
                     <Link to={`/product/${product.id}`} className='product-link'>
                         <div className='product-box'>
-                            <img src="https://www.verywellhealth.com/thmb/g6ZvER87sfrNdrmdc00JIgAQOqw=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-155098400-5b6102b84cedfd005062a2c5.jpg" className='product-image'/>
+                            <img src={product.imgUrl} className='product-image'/>
                             <h1 className='product-name'>{product.title}</h1>
                             <h5 className='product-price'>$15.00</h5>
 

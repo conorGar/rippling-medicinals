@@ -1,6 +1,7 @@
 import React from 'react'
 import './ProductPage.css'
 import { apiCall } from '../../services/apiService'
+import { Link } from "react-router-dom";
 
 
 class ProductPage extends React.Component {
@@ -41,9 +42,9 @@ class ProductPage extends React.Component {
         await this.props.history.push('/')
 
         // await this.fetchUserInfo()
-      }
+    }
 
-  
+
 
     render() {
         return (
@@ -61,10 +62,18 @@ class ProductPage extends React.Component {
                     <h4>Plants Used:</h4>
                     <h4>{this.state.productPlants}</h4>
                     {this.props.isSignedIn && (
-                    <button  onClick={() => this.deleteProject()} className='delete-button' >Delete Product</button>
-                    )}  
+                        <button onClick={() => this.deleteProject()} className='delete-button' >Delete Product</button>
+
+                    )}
+                    {this.props.isSignedIn && (
+
+                    <Link to={`/edit/product/${this.props.match.params.id}`} className='product-link'>
+                        Edit
+                    </Link>
+                    )}
+
                 </div>
-              
+
             </div>
         )
     }
