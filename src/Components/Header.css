@@ -10,7 +10,7 @@
     border-width: 0px;
     border-bottom-width: 1px;
     border-color: rgb(192, 192, 192);
-    margin: 0 0px;
+    /* margin: 0 0px; */
     margin-bottom: 15px;
     font-family: 'Gupter';
     font-size: 20px;
@@ -23,7 +23,7 @@
     background-size: cover;
     /* background-color: blue; */
     width: 200px;
-    height: 80px;
+    height: 70px;
     align-self: flex-start;
     margin: 0;
 }
@@ -34,9 +34,11 @@
     align-items: center;
     padding: 0;
     margin: 0;
+    /* background-color: green; */
+
 }
 
-.other-link{
+.other-link2{
     margin: 0 50px;
     text-decoration: none;
     padding: 0px 10px;
@@ -107,9 +109,9 @@
         /* background-color: aquamarine; */
     }
 
-    .other-link{
+    .other-link2{
         /* background-color: green; */
-        margin: 0 0px;
+        margin:0px 0px;
 
         /* font-size: 10px; */
 
