@@ -20,6 +20,10 @@
 .product-box{
     width: 300px;
     /* background-color: green; */
+    /* padding: 10px; */
+    /* border-style: solid; */
+    /* border-color: rgba(107, 134, 255, 0.199); */
+    border-width: 1px;
     margin: 10px;
     transition: all .2s ease-in-out;
 }
@@ -29,12 +33,32 @@
     height: 100%;
 }
 
+.product-info-container{
+    border-style: solid;
+    border-color: rgba(121, 134, 255, 0.452);
+    margin:0;
+    border-width: 1px;
+    padding: 5px 10px;
+}
+
+.product-link{
+    text-decoration: none;
+}
+
 .product-name{
-    margin: 0;
+    margin: 0px 0px;
+    font-size: 22px;
     border-width: 0;
     border-bottom-width: 1px;
     border-color: rgb(221, 219, 219);
     border-style: solid;
+    text-decoration: none;
+    color: black;
+}
+
+.price-text{
+    margin: 0;
+    color: rgb(160, 160, 160);
 }
 
 .product-price{
