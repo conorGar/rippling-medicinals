@@ -49,18 +49,9 @@ class ProductPage extends React.Component {
     render() {
         return (
             <div className='productpage-holder'>
-                <div className='productpage-left'>
-                    <h1 className='product-title'>{this.state.productTitle}</h1>
-                    <p className='product-description'>{this.state.productDescription}</p>
-                    {/* <ul className='uses-list'>
-                    <li>Exhaustion Support </li>
-                    <li>Nervous System Nourishment</li>
-                </ul> */}
-                </div>
-                <div className='productpage-right'>
-                    <img className='product-img' src={this.state.productImg} />
-                    <h4>Plants Used:</h4>
-                    <h4>{this.state.productPlants}</h4>
+                  <div className='productpage-right'>
+                    <img className='product-img2' src={this.state.productImg} />
+                   
                     {this.props.isSignedIn && (
                         <button onClick={() => this.deleteProject()} className='delete-button' >Delete Product</button>
 
@@ -73,6 +64,19 @@ class ProductPage extends React.Component {
                     )}
 
                 </div>
+                <div className='productpage-left'>
+                    <h5 className='back-text'> Back to products</h5>
+                    <h1 className='product-title'>{this.state.productTitle}</h1>
+                    <h1 className='product-price'>$20.00</h1>
+                    <h5 className='product-ingredients'>Ingredients: {this.state.productPlants}</h5>
+                    <p className='product-description'>{this.state.productDescription}</p>
+                    <button className='purchase-button'>Contact Now To Purchase</button>
+                    {/* <ul className='uses-list'>
+                    <li>Exhaustion Support </li>
+                    <li>Nervous System Nourishment</li>
+                </ul> */}
+                </div>
+              
 
             </div>
         )
