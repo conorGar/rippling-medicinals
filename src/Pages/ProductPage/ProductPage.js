@@ -2,6 +2,9 @@ import React from 'react'
 import './ProductPage.css'
 import { apiCall } from '../../services/apiService'
 import { Link } from "react-router-dom";
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import TestImage from '../../assets/titleText.png'
 import { async } from 'q';
 
 
@@ -55,25 +58,34 @@ class ProductPage extends React.Component {
     render() {
         return (
             <div className='productpage-holder'>
-                  <div className='productpage-right'>
-                    <img className='product-img2' src={this.state.productImg} />
-                   
+                <div className='productpage-right'>
+                    {/* <img className='product-img2' src={this.state.productImg} /> */}
+                    <Carousel>
+                        <div>
+                            <img className='product-img3' src={this.state.productImg} />
+
+                        </div>
+                        <div>
+                            <img className='product-img3' src={this.state.productImg} />
+                            
+                        </div>
+                    </Carousel>
                     {this.props.isSignedIn && (
                         <button onClick={() => this.deleteProject()} className='delete-button' >Delete Product</button>
 
                     )}
                     {this.props.isSignedIn && (
 
-                    <Link to={`/edit/product/${this.props.match.params.id}`} className='product-link'>
-                        Edit
+                        <Link to={`/edit/product/${this.props.match.params.id}`} className='product-link'>
+                            Edit
                     </Link>
                     )}
 
                 </div>
                 <div className='productpage-left'>
                     <h5 className='back-text' onClick={this.handleBackButton}> Back to products</h5>
-                    <h1 className='product-title'>{this.state.productTitle}</h1>
-                    <h1 className='product-price'>$20.00</h1>
+                    <h2 className='product-title'>{this.state.productTitle}</h2>
+                    <h2 className='product-price'>$20.00</h2>
                     <h5 className='product-ingredients'>Ingredients: {this.state.productPlants}</h5>
                     <p className='product-description'>{this.state.productDescription}</p>
                     <button className='purchase-button'>Contact Now To Purchase</button>
@@ -82,7 +94,7 @@ class ProductPage extends React.Component {
                     <li>Nervous System Nourishment</li>
                 </ul> */}
                 </div>
-              
+
 
             </div>
         )
