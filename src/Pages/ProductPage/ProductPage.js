@@ -2,6 +2,7 @@ import React from 'react'
 import './ProductPage.css'
 import { apiCall } from '../../services/apiService'
 import { Link } from "react-router-dom";
+import { async } from 'q';
 
 
 class ProductPage extends React.Component {
@@ -44,6 +45,11 @@ class ProductPage extends React.Component {
         // await this.fetchUserInfo()
     }
 
+    handleBackButton = async () => {
+        await this.props.history.push('/')
+
+    }
+
 
 
     render() {
@@ -65,7 +71,7 @@ class ProductPage extends React.Component {
 
                 </div>
                 <div className='productpage-left'>
-                    <h5 className='back-text'> Back to products</h5>
+                    <h5 className='back-text' onClick={this.handleBackButton}> Back to products</h5>
                     <h1 className='product-title'>{this.state.productTitle}</h1>
                     <h1 className='product-price'>$20.00</h1>
                     <h5 className='product-ingredients'>Ingredients: {this.state.productPlants}</h5>

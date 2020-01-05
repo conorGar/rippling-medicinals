@@ -91,3 +91,10 @@
     background-color:#a84d45;
 
 }
+
+
+.back-text:hover{
+    margin: 0;
+    color: rgb(133, 133, 133);
+    cursor: pointer;
+}
