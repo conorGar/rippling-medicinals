@@ -81,14 +81,15 @@ class ShopPage extends React.Component {
         return currentlyDisplayedProducts.map(product => {
 
             return (
-                <div key={product.id} className='product-container'>
-                    <Link to={`/product/${product.id}`} className='product-link'>
-                        <div className='product-box'>
-                            <img src={product.imgUrl} className='product-image' />
-                            <h1 className='product-name'>{product.title}</h1>
-                            <h5 className='product-price'>$15.00</h5>
+                <div key={product.id} className='shop-product-container'>
+                    <Link to={`/product/${product.id}`} className='shop-product-link'>
+                        <div className='shop-product-box'>
+                            <img src={product.imgUrl} className='shop-product-image' />
+                            
 
                         </div>
+                        <h1 className='shop-product-name'>{product.title}</h1>
+                            <h5 className='shop-product-price'>$15.00</h5>
                     </Link>
 
                 </div>
@@ -115,7 +116,7 @@ class ShopPage extends React.Component {
                     </ul>
                 </div>
                 <div className='product-display-container'>
-                    <h1>- Shop Products -</h1>
+                    <h1 className='shop-title'>- Shop Products -</h1>
                     <div className='products-holder'>
                         {this.renderProducts()}
                     </div>

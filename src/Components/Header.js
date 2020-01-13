@@ -11,16 +11,16 @@ function Header(){
             </Link>
             <div className='other-links-holder'>
 
-                <Link to='/shop' className='other-link2'>
+                <Link to='/shop' className='other-link3'>
                     <h5 className='navLink'>Shop</h5>
                 </Link>
-                <Link to='/about' className='other-link2'>
+                <Link to='/about' className='other-link3'>
                     <h5 className='navLink' >About</h5>
                 </Link>
-                <Link to='/contact' className='other-link2'>
+                <Link to='/contact' className='other-link3'>
                     <h5 className='navLink' >Contact</h5>
                 </Link>
-                <Link to='/blogs' className='other-link2'>
+                <Link to='/blogs' className='other-link3'>
                     <h5 className='navLink' >Blog</h5>
                 </Link>
             </div>
