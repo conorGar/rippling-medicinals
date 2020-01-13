@@ -3,7 +3,7 @@
     /* flex-wrap: wrap; */
     justify-content: space-around;
     align-items: center;
-    padding: 0 30px;
+    padding: 30px 30px;
     /* background-color: purple; */
 }
 
@@ -43,4 +43,11 @@
 
 li{
     margin: 20px 0px;
+    transition-duration: .5s;
+}
+
+li:hover{
+    color: rgba(128, 128, 128, 0.507);
+    cursor: pointer;
+    padding-left:4px; 
 }

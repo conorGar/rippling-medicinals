@@ -11,6 +11,8 @@ class ShopPage extends React.Component {
         this.state = {
             allProducts: [],
             teas: [],
+            simpleTinctures: [],
+            formulaTinctures: [],
             currentlyDisplayedProducts: []
         }
     }
@@ -23,22 +25,60 @@ class ShopPage extends React.Component {
         const response = await apiCall.get(`/product/`)
         console.log(response.data)
         this.setState({
-            allProducts: response.data
+            allProducts: response.data,
+            currentlyDisplayedProducts: response.data
         })
 
     }
 
-    fetchTeas = async () => {
-        const res = await apiCall.get('/product/tea')
+    fetchSimpleTinctures = async () => {
+        console.log("Simple Tincture fetch activate")
+        if(this.state.teas.length <= 1){
+            console.log("Simple Tinctures fetch -2")
+
+            //first time getting teas
+            const res = await apiCall.get('/product/tincture/simple')
+            this.setState({
+                simpleTinctures: res.data
+            })
+        }
         this.setState({
-            teas: res.data
+            currentlyDisplayedProducts: this.state.simpleTinctures
+        })
+    }
+
+
+    fetchFormulaTinctures = async () => {
+        if(this.state.teas.length <= 1){
+            //first time getting teas
+            const res = await apiCall.get('/product/tincture/formula')
+            this.setState({
+                formulaTinctures: res.data
+            })
+        }
+        this.setState({
+            currentlyDisplayedProducts: this.state.formulaTinctures
+        })
+    }
+
+
+    fetchTeas = async () => {
+        if(this.state.teas.length <= 1){
+            //first time getting teas
+            const res = await apiCall.get('/product/tea')
+            this.setState({
+                teas: res.data
+            })
+        }
+        this.setState({
+            currentlyDisplayedProducts: this.state.teas
         })
     }
 
     renderProducts = () => {
-        const { allProducts } = this.state;
+        const { currentlyDisplayedProducts } = this.state;
 
-        return allProducts.map(product => {
+        return currentlyDisplayedProducts.map(product => {
 
             return (
                 <div key={product.id} className='product-container'>
@@ -67,10 +107,10 @@ class ShopPage extends React.Component {
                 <div className='leftside-nav-bar'>
                     <ul className='options-list'>
                         Categories:
-                        <li>All</li>
-                        <li>Simple Tinctures</li>
-                        <li>Formula Tinctures</li>
-                        <li>Teas</li>
+                        <li onClick={this.fetchInfo}>All</li>
+                        <li onClick={this.fetchSimpleTinctures}>Simple Tinctures</li>
+                        <li onClick={this.fetchFormulaTinctures}>Formula Tinctures</li>
+                        <li onClick={this.fetchTeas}>Teas</li>
 
                     </ul>
                 </div>

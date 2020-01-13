@@ -15,7 +15,9 @@ class ProductCreate extends React.Component {
             title: "Title",
             description: "",
             ingredients: "",
-            imgUrl: ""
+            imgUrl: "", 
+            type: "", 
+            price: 15
         }
     }
 
@@ -36,11 +38,11 @@ class ProductCreate extends React.Component {
     handleProductSubmit = async (e) => {
 
         e.preventDefault();
-        const { title, description, imgUrl, ingredients } = this.state
+        const { title, description, imgUrl, ingredients,type,price } = this.state
         const id = this.props.match.params.id;
         console.log("Handle blog submit activate")
         try {
-            await apiCall.post(`/product/create`, { title, description, imgUrl, ingredients })
+            await apiCall.post(`/product/create`, { title, description, imgUrl, ingredients,type,price })
             await this.props.history.push('/')
         }
         catch (error) {
@@ -107,6 +109,40 @@ class ProductCreate extends React.Component {
                                     onChange={this.handleTextInput}
                                     value={this.state.ingredients}
                                     placeholder="Please seperate them by commas(Ex: ingredient 1, ingredient 2, etc)"
+                                />
+                            </div>
+                            <div className="input-type-container">
+                                <h3>Category:</h3>
+                                <input
+                                    type='radio'
+                                    name='type'
+                                    className='type-input'
+                                    onChange={this.handleTextInput}
+                                    value="tea"
+                                />Tea<br />
+                                  <input
+                                    type='radio'
+                                    name='type'
+                                    className='type-input'
+                                    onChange={this.handleTextInput}
+                                    value="tincture-simple"
+                                />Simple Tincture<br />
+                                  <input
+                                    type='radio'
+                                    name='type'
+                                    className='type-input'
+                                    onChange={this.handleTextInput}
+                                    value="tincture-formula"
+                                />Formula Tincture<br />
+                            </div>
+                            <div className="input-container">
+                                <h3>Price:</h3>
+                                <input
+                                    type='number'
+                                    name='price'
+                                    className='ingredients-input'
+                                    onChange={this.handleTextInput}
+                                    value={this.state.price}
                                 />
                             </div>
                             
