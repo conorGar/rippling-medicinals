@@ -42,14 +42,17 @@
     margin: 0 50px;
     text-decoration: none;
     padding: 0px 10px;
-    color: rgb(160, 160, 160);
-    transition-duration: .4s;
+    transition-duration: .3s;
+    color: black;
+    margin-bottom: 5px;
+
     border-radius:200px;
 
 }
 
-.other-link:hover{
-    color: black;
+.other-link2:hover{
+    color: rgb(160, 160, 160);
+    margin-bottom: 0px;
     /* animation: ripple2 1s linear; */
     border-radius:200px;
 
