@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import { Elements, StripeProvider } from 'react-stripe-elements';
+
+
 import Home from './Pages/Home/Home'
 import { Route } from "react-router-dom";
 import ProtectedRoute from './Components/ProtectedRoute'
@@ -18,6 +21,7 @@ import ProductEdit from './Pages/ProductEdit/ProductEdit'
 import LoginForm from './Pages/AdminSignin/AdminSignin'
 import { login, signUp, getProfile } from './services/apiService'
 import authService from './services/authService'
+import CheckoutForm from './Components/CheckoutForm/CheckoutForm';
 
 
 
@@ -69,6 +73,12 @@ export default class App extends React.Component {
 
         <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet"></link>
         <Header />
+
+        <StripeProvider apiKey="pk_test_fXAZTVvySOsNDXUS5Uf6FFb600A1D1OPT8">
+          <Elements>
+            <CheckoutForm totalCost={20} />
+          </Elements>
+        </StripeProvider>
         <Route
           exact
           path="/"
